@@ -23,6 +23,26 @@ public abstract class Icon {
     }
 
     /**
+     * Represents an unclickable icon
+     */
+    public static class UnclickableIcon extends Icon {
+
+        /**
+         * Creates an Icon for a {@link Menu}
+         *
+         * @param itemStack the item represented by this icon
+         */
+        public UnclickableIcon(ItemStack itemStack) {
+            super(itemStack);
+        }
+
+        @Override
+        public void click(Player player, Menu menu) {
+            // Do nothing
+        }
+    }
+
+    /**
      * Gets the item
      *
      * @return the item that this icon represents
