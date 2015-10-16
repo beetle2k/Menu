@@ -63,6 +63,16 @@ public class Menu implements InventoryHolder {
     }
 
     /**
+     * Returns an {@link Icon} at a specific slot
+     *
+     * @param slot the slot
+     * @return the icon at the slot, null if there is no icon there
+     */
+    public Icon getIcon(int slot) {
+        return icons.get(slot);
+    }
+
+    /**
      * Removes an icon at a specific slot
      *
      * @param slot the slot
