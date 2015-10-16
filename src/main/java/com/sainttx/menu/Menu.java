@@ -60,7 +60,7 @@ public class Menu implements InventoryHolder {
             removeIcon(slot);
         }
 
-        inventory.setItem(slot, icon.getItemStack());
+        getInventory().setItem(slot, icon.getItemStack());
         icons.put(slot, icon);
     }
 
@@ -85,7 +85,7 @@ public class Menu implements InventoryHolder {
         }
 
         icons.remove(slot);
-        inventory.setItem(slot, null);
+        getInventory().setItem(slot, null);
     }
 
     /**
