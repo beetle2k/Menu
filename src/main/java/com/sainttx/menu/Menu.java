@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -128,6 +129,15 @@ public class Menu implements InventoryHolder {
                 continue;
             }
             ((Player) viewer).updateInventory();
+        }
+    }
+
+    /**
+     * Closes the inventory on all viewers
+     */
+    public void close() {
+        for (HumanEntity viewer : Collections.unmodifiableCollection(getInventory().getViewers())) {
+            viewer.closeInventory();
         }
     }
 
