@@ -6,7 +6,7 @@
 
     <groupId>com.sainttx</groupId>
     <artifactId>Menu</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>Menu</name>
     <description>Allows fluid creation of Minecraft GUI menus</description>
