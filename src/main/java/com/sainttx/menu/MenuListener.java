@@ -13,7 +13,7 @@ import org.bukkit.inventory.Inventory;
  */
 public class MenuListener implements Listener {
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    @EventHandler(ignoreCancelled = true)
     public void onItemClick(InventoryClickEvent event) {
         Inventory inventory = event.getInventory();
 
