@@ -7,7 +7,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -125,21 +124,16 @@ public class Menu implements InventoryHolder {
      * Updates the inventory of all viewers inside the inventory
      */
     public void update() {
-        for (HumanEntity viewer : getInventory().getViewers()) {
-            if (!(viewer instanceof Player)) {
-                continue;
-            }
-            ((Player) viewer).updateInventory();
-        }
+        // Update icons
+        icons.forEach((slot, icon) -> getInventory().setItem(slot, icon.getItemStack()));
+        getInventory().getViewers().stream().filter(he -> he instanceof Player).forEach(he -> ((Player) he).updateInventory());
     }
 
     /**
      * Closes the inventory on all viewers
      */
     public void close() {
-        for (HumanEntity viewer : new ArrayList<>(getInventory().getViewers())) {
-            viewer.closeInventory();
-        }
+        new ArrayList<>(getInventory().getViewers()).forEach(HumanEntity::closeInventory);
     }
 
     @Override
